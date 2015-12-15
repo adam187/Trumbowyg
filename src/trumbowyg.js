@@ -111,6 +111,16 @@ jQuery.trumbowyg = {
                     // HTML
                     case 'html':
                         return t.html(params);
+
+                    // Expose execCmd
+                    case 'execCmd':
+                        if (typeof params == 'string') {
+                            params = {
+                                cmd: params,
+                                param: null
+                            };
+                        }
+                        return t.execCmd(params.cmd, params.param || null);
                 }
             } catch (e) {
             }

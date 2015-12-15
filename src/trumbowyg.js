@@ -876,8 +876,8 @@ jQuery.trumbowyg = {
                     // Get rid of temporial span's
                     $('[data-trumbowyg-textnode]', t.$ed).contents().unwrap();
 
-                    // Replace empty <p> with <br> (IE loves adding empty <p>)
-                    t.$ed.find('p:empty').replaceWith('<br/>');
+                    // Fill empty <p> with <br> (IE loves adding empty <p>)
+                    t.$ed.find('p:empty').append('<br/>');
                 }
 
                 t.restoreSelection();
